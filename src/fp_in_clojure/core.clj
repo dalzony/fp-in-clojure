@@ -66,7 +66,7 @@
     true
     false))
 
-(defn is-sorted [array f]
+(defn sorted? [array f]
   (letfn [(temp [array]
             (if (= 1 (count array))
               true
@@ -76,3 +76,8 @@
     (temp array)))
 
 
+;; 2-3
+(defn curry [f]
+  (fn [a]
+    (fn [b]
+      (f a b))))
