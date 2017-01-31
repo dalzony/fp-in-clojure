@@ -66,12 +66,12 @@
     true
     false))
 
-(defn sorted? [array f]
+(defn ssorted? [array f]
   (letfn [(temp [array]
-            (if (= 1 (count array))
+            (if (seq array)
               true
               (if (f (first array) (second array))
-                (temp (rest array))
+                (recur (rest array))
                 false)))]
     (temp array)))
 
