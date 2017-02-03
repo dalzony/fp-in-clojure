@@ -81,3 +81,12 @@
   (fn [a]
     (fn [b]
       (f a b))))
+
+;; 2-4
+(defn uncurry [g]
+  (fn [a b]
+    ((g a) b)))
+
+;; 2-5
+(defn compose [f g]
+  (fn [a] (f (g a))))
